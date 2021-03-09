@@ -27,7 +27,7 @@ YOUR_VAULT_ADDR=http://stenio.vault.hashidemos.io:8200
 1. Go to https://console.developers.google.com/apis/credentials/, log in if needed
 2. Click "Create credentials > OAuth ClientID"
 3. Select "Web application", give it a name
-4. On "Authorized redirect URLs", enter "http://YOUR_VAULT_ADDR//ui/vault/auth/oidc/oidc/callback"
+4. On "Authorized redirect URIs", enter "http://YOUR_VAULT_ADDR//ui/vault/auth/oidc/oidc/callback"
 5. Press Save
 6. In the next step you will use the Client ID and the Client Secret when configuring Vault
 
@@ -38,8 +38,8 @@ vault auth enable oidc
 
 vault write auth/oidc/config \
     oidc_discovery_url="https://accounts.google.com" \
-    oidc_client_id="YOUR_GOOGLE_API_CLIENT_ID", \
-    oidc_client_secret="YOUR_GOOGLE_API_CLIENT_SECRET", \
+    oidc_client_id="YOUR_GOOGLE_API_CLIENT_ID" \
+    oidc_client_secret="YOUR_GOOGLE_API_CLIENT_SECRET" \
     default_role="gmail"
 
 ```
